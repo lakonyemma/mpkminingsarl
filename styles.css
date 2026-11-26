@@ -131,3 +131,83 @@ html[data-theme="dark"] .nav-cta{color:#e0c47e}
   .site-header{gap:8px}
   .language-control{margin-left:auto}
 }
+
+
+/* Royal Gold & Obsidian — complete page-wide theme tokens */
+:root{
+  color-scheme:light;
+  --ink:#22231f;
+  --muted:#686a63;
+  --gold:#c6a45d;
+  --gold-light:#a98235;
+  --paper:#eae8e1;
+  --line:rgba(34,35,31,.16);
+  --surface:#e3e1d9;
+  --surface-raised:#f0eee8;
+  --header-bg:#eae8e1;
+  --control-bg:#f0eee8;
+  --control-text:#22231f;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#efeee8;
+  --muted:#b8b7ae;
+  --gold:#c6a45d;
+  --gold-light:#e0c47e;
+  --paper:#11120f;
+  --line:rgba(234,232,225,.16);
+  --surface:#191a16;
+  --surface-raised:#22231f;
+  --header-bg:#11120f;
+  --control-bg:#22231f;
+  --control-text:#efeee8;
+}
+html,body{background:var(--paper);color:var(--ink)}
+body{transition:background-color .25s ease,color .25s ease}
+.topline{background:#11120f;color:#c7c4b9}
+.site-header{background:var(--header-bg);color:var(--ink)}
+.brand-mark{color:var(--ink)}
+.brand-copy strong{color:var(--ink)}
+.brand-copy small,.language-control label{color:var(--muted)}
+.nav>a:not(.nav-cta){color:var(--muted)}
+.nav>a:hover,.nav-cta:hover{color:var(--gold-light)}
+.nav-cta{border-color:var(--gold);color:var(--ink)}
+.language-control select{background:var(--control-bg);color:var(--control-text);border-color:var(--gold)}
+.theme-toggle{position:relative;z-index:7;flex:0 0 auto;min-height:40px;padding:0 13px;border:1px solid var(--gold);border-radius:2px;background:transparent;color:var(--ink);cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.theme-toggle:hover,.theme-toggle:active{background:var(--gold);color:#171812}
+.theme-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.intro,.approach,.contact,.gold-gallery{background:var(--paper);color:var(--ink)}
+.intro h2,.approach h2,.contact h2,.business-heading h2,.gallery-heading h2{color:var(--ink)}
+.intro h2 em,.approach h2 em,.contact h2 em,.business-heading h2 em,.gallery-heading h2 em{color:var(--gold-light)}
+.lead,.principles h3{color:var(--ink)}
+.intro-copy>p:not(.lead),.approach-heading>p,.contact-intro,.principles p,.business-heading>p,.gallery-heading>p,.gallery-disclaimer{color:var(--muted)}
+.section-kicker{color:var(--gold-light)}
+.stat-strip,.stat-strip>div{border-color:var(--line)}
+.stat-strip strong,.stat-strip span{color:var(--muted)}
+.stat-strip strong{color:var(--gold-light)}
+.under-link,.under-link span,.contact-arrow{color:var(--gold-light)}
+.business-section{background:var(--surface);color:var(--ink)}
+.business-card,.business-card:not(.sales-card){background:var(--surface-raised);color:var(--ink);border-color:var(--line)}
+.business-card h3{color:var(--ink)}
+.business-card p{color:var(--muted)}
+.sales-card{background:#171812;color:#f6f3eb;border-color:#171812}
+.sales-card h3,.sales-card p{color:#f6f3eb}
+.business-link{color:var(--gold-light);border-color:var(--gold)}
+.buyer-panel{background:#11120f;color:#efeee8;border:1px solid rgba(198,164,93,.28)}
+.buyer-copy h3,.buyer-form label{color:#efeee8}
+.buyer-copy>p,.form-note{color:#b8b7ae}
+.buyer-copy h3 em{color:#e0c47e}
+.buyer-points span{color:#eae8e1}
+.buyer-form input,.buyer-form select,.buyer-form textarea{background:#22231f;color:#efeee8;border-color:rgba(198,164,93,.4)}
+.buyer-form input:focus,.buyer-form select:focus,.buyer-form textarea:focus{border-color:#c6a45d}
+.gold-image-card{background:#11120f}
+.contact-item,.contact-details{border-color:var(--line)}
+.contact-item strong{color:var(--ink)}
+footer{background:#11120f;color:#eae8e1}
+footer .brand-copy strong{color:#eae8e1}
+footer .brand-copy small{color:#b8b7ae}
+.menu-toggle i{background:var(--ink)}
+@media(max-width:800px){
+  .nav{background:var(--header-bg);color:var(--ink)}
+  .theme-toggle{order:2;margin-left:0;margin-right:0;min-height:36px;padding:0 10px}
+}
