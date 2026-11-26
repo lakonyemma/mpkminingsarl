@@ -78,3 +78,26 @@ languageSelect.addEventListener("change", (event) => setLanguage(event.target.va
 let savedLanguage = "en";
 try { savedLanguage = localStorage.getItem("mpk-site-language") || "en"; } catch (error) {}
 setLanguage(savedLanguage);
+
+
+// Appearance preference: dark is the brand default; the user's choice is remembered.
+const themeToggle = document.querySelector("#themeToggle");
+const themeRoot = document.documentElement;
+function applyTheme(theme) {
+  const selectedTheme = theme === "light" ? "light" : "dark";
+  themeRoot.dataset.theme = selectedTheme;
+  const isDark = selectedTheme === "dark";
+  themeToggle.setAttribute("aria-pressed", String(!isDark));
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.querySelector(".theme-toggle-icon").textContent = isDark ? "☼" : "☾";
+  themeToggle.querySelector(".theme-toggle-label").textContent = isDark ? "Light mode" : "Dark mode";
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.content = isDark ? "#11110f" : "#d9d8d2";
+  try { localStorage.setItem("mpk-site-theme", selectedTheme); } catch (error) {}
+}
+let savedTheme = "dark";
+try { savedTheme = localStorage.getItem("mpk-site-theme") || "dark"; } catch (error) {}
+applyTheme(savedTheme);
+themeToggle.addEventListener("click", () => {
+  applyTheme(themeRoot.dataset.theme === "dark" ? "light" : "dark");
+});
