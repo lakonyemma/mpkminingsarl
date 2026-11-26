@@ -52,7 +52,7 @@ if (buyerForm) {
       "",
       "Message:",
       formData.get("message")
-    ].join("\\n");
+    ].join("\n");
     const dictionary = translations[language] || translations.en;
     window.location.href = "mailto:mpkminingsarlkikeke@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
@@ -67,7 +67,10 @@ function setLanguage(language) {
     const translation = dictionary[element.dataset.i18n];
     if (translation !== undefined) element.innerHTML = translation;
   });
-  document.querySelectorAll("[data-placeholder-i18n]").forEach((element) => {\n    const placeholder = dictionary[element.dataset.placeholderI18n];\n    if (placeholder) element.placeholder = placeholder;\n  });\n  languageSelect.value = supported;
+  document.querySelectorAll("[data-placeholder-i18n]").forEach((element) => {
+    const placeholder = dictionary[element.dataset.placeholderI18n];
+    if (placeholder) element.placeholder = placeholder;
+  });\n  languageSelect.value = supported;
   try { localStorage.setItem("mpk-site-language", supported); } catch (error) {}
 }
 languageSelect.addEventListener("change", (event) => setLanguage(event.target.value));
