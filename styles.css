@@ -62,3 +62,72 @@
 .gold-image-card figcaption small{font-size:11px;line-height:1.6;color:#d1d0c5;max-width:390px}
 .gallery-disclaimer{font-size:9px;line-height:1.7;color:#89897f;margin:17px 0 0}
 @media(max-width:800px){.gallery-heading,.gold-image-grid{grid-template-columns:1fr}.gallery-heading{gap:16px}.gold-image-card{height:390px;min-height:340px}.gold-image-card figcaption{left:22px;right:22px;bottom:22px}}
+
+
+/* MPK Mining SARL — unified gold, black and ash theme */
+:root{
+  color-scheme:light;
+  --ink:#171812;
+  --muted:#696a63;
+  --gold:#c6a45d;
+  --gold-light:#dfc27d;
+  --paper:#eae8e1;
+  --line:rgba(25,27,20,.14);
+  --surface:#f1efe9;
+  --surface-raised:#f5f3ed;
+  --header-bg:#eae8e1;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#efeee8;
+  --muted:#b2b1a8;
+  --gold:#c6a45d;
+  --gold-light:#e0c47e;
+  --paper:#11120f;
+  --line:rgba(234,232,225,.14);
+  --surface:#1b1c18;
+  --surface-raised:#22231f;
+  --header-bg:#171812;
+}
+body{background:var(--paper);color:var(--ink);transition:background-color .25s ease,color .25s ease}
+.site-header{background:var(--header-bg);color:var(--ink);transition:background-color .25s ease,color .25s ease}
+.brand-mark{color:var(--ink)}
+.brand-copy small,.language-control label{color:var(--muted)}
+.nav>a:not(.nav-cta){color:var(--muted)}
+.language-control select{background:var(--surface-raised);color:var(--ink)}
+.intro,.approach,.contact{background:var(--paper);color:var(--ink)}
+.intro h2,.approach h2,.contact h2,.business-heading h2{color:var(--ink)}
+.intro h2 em,.approach h2 em,.contact h2 em,.business-heading h2 em,.gallery-heading h2 em{color:var(--gold)}
+.lead{color:var(--ink)}
+.intro-copy>p:not(.lead),.business-heading>p,.gallery-heading>p,.business-card p{color:var(--muted)}
+.business-section{background:var(--surface);color:var(--ink)}
+.business-card{background:var(--surface-raised);color:var(--ink);border-color:var(--line)}
+.sales-card{background:#171812;color:#f6f3eb;border-color:#171812}
+.gold-gallery{background:var(--paper);color:var(--ink)}
+.gallery-disclaimer{color:var(--muted)}
+.contact-item{border-color:var(--line)}
+.contact-item strong{color:var(--ink)}
+footer{background:#11120f;color:#eae8e1}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid var(--gold);background:transparent;color:var(--ink);font:600 10px "DM Sans",sans-serif;letter-spacing:.3px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.theme-toggle:hover{background:var(--gold);color:#171812}
+.theme-icon{font-size:16px;line-height:1}
+.theme-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+html[data-theme="dark"] .business-section{background:#151611}
+html[data-theme="dark"] .business-card:not(.sales-card){background:#20211c;color:#efeee8;border-color:var(--line)}
+html[data-theme="dark"] .business-card:not(.sales-card) p{color:#b2b1a8}
+html[data-theme="dark"] .gold-gallery{background:#171812}
+html[data-theme="dark"] .contact-item strong{color:#efeee8}
+html[data-theme="dark"] .contact-item{border-color:var(--line)}
+html[data-theme="dark"] .stat-strip{border-color:var(--line)}
+html[data-theme="dark"] .stat-strip>div{border-color:var(--line)}
+html[data-theme="dark"] .stat-strip span{color:var(--muted)}
+html[data-theme="dark"] .intro-copy>p:not(.lead){color:var(--muted)}
+html[data-theme="dark"] .under-link{color:#e0c47e}
+html[data-theme="dark"] .language-control select{background:#22231f;color:#efeee8}
+html[data-theme="dark"] .nav-cta{color:#e0c47e}
+@media(max-width:800px){
+  .theme-toggle{order:2;margin-left:auto;margin-right:8px;min-height:36px;padding:0 9px}
+  .theme-label{display:none}
+  .site-header{gap:8px}
+  .language-control{margin-left:auto}
+}
