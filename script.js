@@ -70,7 +70,8 @@ function setLanguage(language) {
   document.querySelectorAll("[data-placeholder-i18n]").forEach((element) => {
     const placeholder = dictionary[element.dataset.placeholderI18n];
     if (placeholder) element.placeholder = placeholder;
-  });\n  languageSelect.value = supported;
+  });
+  languageSelect.value = supported;
   try { localStorage.setItem("mpk-site-language", supported); } catch (error) {}
 }
 languageSelect.addEventListener("change", (event) => setLanguage(event.target.value));
