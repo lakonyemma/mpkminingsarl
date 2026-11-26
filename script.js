@@ -80,29 +80,42 @@ try { savedLanguage = localStorage.getItem("mpk-site-language") || "en"; } catch
 setLanguage(savedLanguage);
 
 
-/* Persistent light/dark appearance preference */
+/* Persistent, delegated light/dark appearance control */
 (() => {
-  const toggle = document.querySelector("#themeToggle");
-  if (!toggle) return;
   const root = document.documentElement;
-  const icon = toggle.querySelector(".theme-icon");
-  const label = toggle.querySelector(".theme-label");
+  const getToggle = () => document.querySelector("#themeToggle");
+
   const applyTheme = (theme) => {
     const dark = theme === "dark";
-    root.dataset.theme = dark ? "dark" : "light";
-    toggle.setAttribute("aria-pressed", String(dark));
-    toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    icon.textContent = dark ? "☀" : "☾";
-    label.textContent = dark ? "Light mode" : "Dark mode";
+    const activeTheme = dark ? "dark" : "light";
+    root.dataset.theme = activeTheme;
+    const toggle = getToggle();
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(dark));
+      toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      const icon = toggle.querySelector(".theme-icon");
+      const label = toggle.querySelector(".theme-label");
+      if (icon) icon.textContent = dark ? "☀" : "☾";
+      if (label) label.textContent = dark ? "Light mode" : "Dark mode";
+    }
     const themeColor = document.querySelector('meta[name="theme-color"]');
     if (themeColor) themeColor.content = dark ? "#11120f" : "#eae8e1";
   };
+
   let savedTheme = "light";
-  try { savedTheme = localStorage.getItem("mpk-site-theme") || "light"; } catch (error) {}
+  try {
+    savedTheme = localStorage.getItem("mpk-site-theme") || "light";
+  } catch (error) {}
   applyTheme(savedTheme);
-  toggle.addEventListener("click", () => {
+
+  document.addEventListener("click", (event) => {
+    const toggle = event.target.closest("#themeToggle");
+    if (!toggle) return;
+    event.preventDefault();
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     applyTheme(nextTheme);
-    try { localStorage.setItem("mpk-site-theme", nextTheme); } catch (error) {}
+    try {
+      localStorage.setItem("mpk-site-theme", nextTheme);
+    } catch (error) {}
   });
 })();
