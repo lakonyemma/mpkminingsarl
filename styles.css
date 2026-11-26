@@ -44,3 +44,21 @@
 .buyer-form .btn{border:0;cursor:pointer;justify-self:start;margin-top:4px}
 .form-note{font-size:9px;line-height:1.7;color:#999b90;margin:0}
 @media(max-width:800px){.business-heading,.business-pillars,.buyer-panel{grid-template-columns:1fr}.business-heading{gap:22px}.business-card{min-height:320px;padding:28px}.buyer-panel{padding:30px 22px;gap:38px}.form-row{grid-template-columns:1fr}.business-section.section-pad{padding-top:80px;padding-bottom:80px}}
+
+/* Gold product imagery gallery */
+.gold-gallery{background:#f6f4ed}
+.gallery-heading{display:grid;grid-template-columns:1.1fr .7fr;gap:10%;align-items:end;margin:32px 0 38px}
+.gallery-heading h2{font-size:clamp(36px,4.3vw,58px);line-height:1.14;margin:0;letter-spacing:-2px}
+.gallery-heading h2 em{color:#a88a4d;font-style:normal}
+.gallery-heading>p{font-size:13px;line-height:1.9;color:#707268;margin:0 0 5px}
+.gold-image-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.gold-image-card{position:relative;margin:0;min-height:380px;height:clamp(380px,43vw,570px);overflow:hidden;background:#141610}
+.gold-image-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,rgba(10,12,9,.92),transparent);pointer-events:none}
+.gold-image-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.92)}
+.gold-image-card:hover img{transform:scale(1.045)}
+.gold-image-card figcaption{position:absolute;z-index:1;left:30px;right:30px;bottom:28px;display:grid;gap:9px;color:#f8f5ec}
+.gold-image-card figcaption span{font-size:8px;letter-spacing:2px;color:#e0c47e;font-weight:700}
+.gold-image-card figcaption strong{font:600 25px Manrope,sans-serif}
+.gold-image-card figcaption small{font-size:11px;line-height:1.6;color:#d1d0c5;max-width:390px}
+.gallery-disclaimer{font-size:9px;line-height:1.7;color:#89897f;margin:17px 0 0}
+@media(max-width:800px){.gallery-heading,.gold-image-grid{grid-template-columns:1fr}.gallery-heading{gap:16px}.gold-image-card{height:390px;min-height:340px}.gold-image-card figcaption{left:22px;right:22px;bottom:22px}}
