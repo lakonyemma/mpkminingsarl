@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261126-2">
+  <link rel="stylesheet" href="styles.css?v=20261126-3">
 </head>
 <body>
   <div class="topline"><span data-i18n="topLocation">TANZANIA · MINERAL RESOURCES</span><span data-i18n="topTagline">Building value from the earth</span></div>
@@ -19,7 +19,7 @@
     </a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i></i><i></i></button>
     <nav class="nav">
-      <a href="#about" data-i18n="navCompany">Company</a><a href="#focus" data-i18n="navFocus">Our Focus</a><a href="#approach" data-i18n="navApproach">Our Approach</a><a href="#contact" class="nav-cta" data-i18n="navContact">Contact us <span>↗</span></a>
+      <a href="#about" data-i18n="navCompany">Company</a><a href="#focus" data-i18n="navFocus">Our Focus</a><a href="#business" data-i18n="navBusiness">Business</a><a href="#approach" data-i18n="navApproach">Our Approach</a><a href="#contact" class="nav-cta" data-i18n="navContact">Contact us <span>↗</span></a>
     </nav>
     <div class="language-control"><label for="languageSelect" data-i18n="languageLabel">Language</label><select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="sw">Kiswahili</option><option value="fr">Français</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="nl">Nederlands</option></select></div>
   </header>
@@ -53,8 +53,52 @@
       <span class="photo-caption" data-i18n="photoCaption">MINERAL RESOURCES · TANZANIA</span>
     </section>
 
+    <section class="business-section section-pad" id="business">
+      <div class="section-kicker"><span data-i18n="businessKicker">03 — OUR BUSINESS</span></div>
+      <div class="business-heading">
+        <h2 data-i18n="businessTitle">From mineral resources<br><em>to global gold markets.</em></h2>
+        <p data-i18n="businessIntro">MPK Mining SARL brings together mining, mineral processing and international gold sales as connected areas of its business.</p>
+      </div>
+      <div class="business-pillars">
+        <article class="business-card mining-card">
+          <span class="business-number">01 / MINING & PROCESSING</span>
+          <div class="business-icon">⛏</div>
+          <h3 data-i18n="miningPillarTitle">Mining & mineral processing</h3>
+          <p data-i18n="miningPillarText">Our business is rooted in Tanzania's mineral sector, with a focus on gold mining and processing. Contact our team to discuss operational scope, processing requirements and potential business cooperation.</p>
+          <a href="#contact" class="business-link"><span data-i18n="miningPillarLink">Discuss mining and processing <span>↗</span></span></a>
+        </article>
+        <article class="business-card sales-card">
+          <span class="business-number">02 / INTERNATIONAL TRADE</span>
+          <div class="business-icon">Au</div>
+          <h3 data-i18n="salesPillarTitle">International gold sales</h3>
+          <p data-i18n="salesPillarText">We welcome enquiries from prospective gold buyers, trading companies and commercial partners. Contact MPK Mining SARL to discuss product information, specifications, quantities and transaction requirements.</p>
+          <a href="#buyer-enquiry" class="business-link"><span data-i18n="salesPillarLink">Make a gold sales enquiry <span>↗</span></span></a>
+        </article>
+      </div>
+      <div class="buyer-panel" id="buyer-enquiry">
+        <div class="buyer-copy">
+          <span class="buyer-kicker" data-i18n="buyerKicker">INTERNATIONAL BUYER DESK</span>
+          <h3 data-i18n="buyerTitle">Looking to discuss<br><em>gold supply?</em></h3>
+          <p data-i18n="buyerText">Send our team an enquiry about gold sales, product specifications, quantities or a potential trading relationship. Our team will follow up using the contact details you provide.</p>
+          <div class="buyer-points"><span data-i18n="buyerPoint1">Direct business enquiries</span><span data-i18n="buyerPoint2">International buyer discussions</span><span data-i18n="buyerPoint3">Product and transaction questions</span></div>
+        </div>
+        <form class="buyer-form" id="buyerForm">
+          <label><span data-i18n="formName">Your name</span><input name="name" autocomplete="name" required placeholder="Full name" data-placeholder-i18n="formNamePlaceholder"></label>
+          <label><span data-i18n="formCompany">Company</span><input name="company" autocomplete="organization" placeholder="Company name" data-placeholder-i18n="formCompanyPlaceholder"></label>
+          <div class="form-row">
+            <label><span data-i18n="formCountry">Country</span><input name="country" autocomplete="country-name" required placeholder="Country" data-placeholder-i18n="formCountryPlaceholder"></label>
+            <label><span data-i18n="formEmail">Email address</span><input type="email" name="email" autocomplete="email" required placeholder="name@example.com"></label>
+          </div>
+          <label><span data-i18n="formInterest">Enquiry type</span><select name="interest" required><option value="Gold purchase" data-i18n="formGoldOption">Gold purchase</option><option value="Mining cooperation" data-i18n="formMiningOption">Mining cooperation</option><option value="Processing cooperation" data-i18n="formProcessingOption">Processing cooperation</option><option value="Business partnership" data-i18n="formPartnerOption">Business partnership</option></select></label>
+          <label><span data-i18n="formMessage">Your message</span><textarea name="message" rows="4" required placeholder="Tell us about your enquiry" data-placeholder-i18n="formMessagePlaceholder"></textarea></label>
+          <button class="btn btn-gold" type="submit"><span data-i18n="formSubmit">Prepare enquiry email <span>↗</span></span></button>
+          <p class="form-note" data-i18n="formNote">Your email application will open with your enquiry addressed to MPK Mining SARL. No information is stored on this website.</p>
+        </form>
+      </div>
+    </section>
+
     <section class="approach section-pad" id="approach">
-      <div class="section-kicker"><span data-i18n="approachKicker">03 — HOW WE THINK</span></div>
+      <div class="section-kicker"><span data-i18n="approachKicker">04 — HOW WE THINK</span></div>
       <div class="approach-heading"><h2 data-i18n="approachTitle">Building a responsible<br><em>mining business.</em></h2><p data-i18n="approachIntro">Our principles shape how we engage with opportunities, people and the places connected to our work.</p></div>
       <div class="principles">
         <article><span class="principle-no">01</span><div class="principle-icon">◇</div><h3 data-i18n="principle1Title">Operational discipline</h3><p data-i18n="principle1Text">We value clear processes, careful planning and a professional approach to mining activities.</p></article>
@@ -68,7 +112,7 @@
     </section>
 
     <section class="contact section-pad" id="contact">
-      <div class="section-kicker"><span data-i18n="contactKicker">04 — GET IN TOUCH</span></div>
+      <div class="section-kicker"><span data-i18n="contactKicker">05 — GET IN TOUCH</span></div>
       <div class="contact-grid"><div><h2 data-i18n="contactTitle">Let's talk<br><em>business.</em></h2><p class="contact-intro" data-i18n="contactIntro">Connect with MPK Mining SARL for gold sales enquiries, processing, business opportunities and partnership discussions.</p></div>
       <div class="contact-details">
         <a class="contact-item" href="tel:+255746061212"><span class="contact-label" data-i18n="phoneLabel">TELEPHONE</span><strong>+255 746 061 212</strong><span class="contact-arrow">↗</span></a>
@@ -78,6 +122,6 @@
     </section>
   </main>
   <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">M<span>✦</span></span><span class="brand-copy"><strong>MPK MINING</strong><small>SARL · TANZANIA</small></span></a><span>© <span id="year"></span> MPK Mining SARL. All rights reserved.</span><a href="#home" class="back-top"><span data-i18n="backTop">BACK TO TOP ↑</span></a></footer>
-  <script src="script.js?v=20261126-2"></script>
+  <script src="script.js?v=20261126-3"></script>
 </body>
 </html>
